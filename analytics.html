@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SafeBuild - Analytics</title>
+
+    <link rel="stylesheet" href="analytics.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fa-solid fa-helmet-safety"></i>
+            <span>SafeBuild</span>
+        </div>
+
+        <nav>
+            <a href="dashboard.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="incident.html">
+                <i class="fa-solid fa-file-circle-exclamation"></i>
+                <span>Incident Reports</span>
+            </a>
+
+            <a href="workers.html">
+                <i class="fa-solid fa-users"></i>
+                <span>Workers</span>
+            </a>
+
+            <a href="ppe.html">
+                <i class="fa-solid fa-helmet-safety"></i>
+                <span>PPE Compliance</span>
+            </a>
+
+            <a href="analytics.html" class="active">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Analytics</span>
+            </a>
+
+            <a href="settings.html">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+            <a href="login.html">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+        </nav>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+        <header class="topbar">
+
+            <div>
+                <h1>Safety Analytics</h1>
+                <p>Monitor construction site safety performance.</p>
+            </div>
+
+            <div class="admin">
+                <i class="fa-solid fa-user"></i>
+                Admin
+            </div>
+
+        </header>
+
+
+        <!-- STATISTICS -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <div class="icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+
+                <div>
+                    <h2>98%</h2>
+                    <p>Safety Compliance</p>
+                </div>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="icon">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+
+                <div>
+                    <h2>15</h2>
+                    <p>Total Incidents</p>
+                </div>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="icon">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+
+                <div>
+                    <h2>520</h2>
+                    <p>Total Workers</p>
+                </div>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="icon">
+                    <i class="fa-solid fa-helmet-safety"></i>
+                </div>
+
+                <div>
+                    <h2>96%</h2>
+                    <p>PPE Compliance</p>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- ANALYTICS CONTENT -->
+        <section class="analytics-grid">
+
+            <!-- SAFETY PERFORMANCE -->
+            <div class="panel">
+
+                <div class="panel-header">
+                    <h2>Safety Performance</h2>
+                    <span>2026</span>
+                </div>
+
+                <div class="bars">
+
+                    <div class="bar-item">
+                        <span>Jan</span>
+                        <div class="bar">
+                            <div style="height:75%"></div>
+                        </div>
+                    </div>
+
+                    <div class="bar-item">
+                        <span>Feb</span>
+                        <div class="bar">
+                            <div style="height:82%"></div>
+                        </div>
+                    </div>
+
+                    <div class="bar-item">
+                        <span>Mar</span>
+                        <div class="bar">
+                            <div style="height:78%"></div>
+                        </div>
+                    </div>
+
+                    <div class="bar-item">
+                        <span>Apr</span>
+                        <div class="bar">
+                            <div style="height:88%"></div>
+                        </div>
+                    </div>
+
+                    <div class="bar-item">
+                        <span>May</span>
+                        <div class="bar">
+                            <div style="height:92%"></div>
+                        </div>
+                    </div>
+
+                    <div class="bar-item">
+                        <span>Jun</span>
+                        <div class="bar">
+                            <div style="height:96%"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- INCIDENT SUMMARY -->
+            <div class="panel">
+
+                <div class="panel-header">
+                    <h2>Incident Summary</h2>
+                </div>
+
+                <div class="incident-row">
+                    <span>
+                        <i class="fa-solid fa-circle"></i>
+                        Minor
+                    </span>
+                    <strong>8</strong>
+                </div>
+
+                <div class="incident-row">
+                    <span>
+                        <i class="fa-solid fa-circle"></i>
+                        Moderate
+                    </span>
+                    <strong>5</strong>
+                </div>
+
+                <div class="incident-row">
+                    <span>
+                        <i class="fa-solid fa-circle"></i>
+                        Critical
+                    </span>
+                    <strong>2</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SAFETY OVERVIEW -->
+        <section class="overview">
+
+            <div class="panel">
+
+                <div class="panel-header">
+                    <h2>Safety Overview</h2>
+                </div>
+
+                <div class="overview-content">
+
+                    <div class="circle">
+                        <strong>98%</strong>
+                        <span>Safe</span>
+                    </div>
+
+                    <div class="overview-info">
+
+                        <div>
+                            <span class="dot"></span>
+                            PPE Compliance
+                            <strong>96%</strong>
+                        </div>
+
+                        <div>
+                            <span class="dot"></span>
+                            Training Completed
+                            <strong>94%</strong>
+                        </div>
+
+                        <div>
+                            <span class="dot"></span>
+                            Safety Checks
+                            <strong>98%</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

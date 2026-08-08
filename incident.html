@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SafeBuild - Incident Report</title>
+
+    <link rel="stylesheet" href="incident.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <h2>
+            <i class="fa-solid fa-helmet-safety"></i>
+            SafeBuild
+        </h2>
+
+        <ul>
+
+            <li onclick="location.href='dashboard.html'">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </li>
+
+            <li class="active">
+                <i class="fa-solid fa-file-circle-exclamation"></i>
+                Incident Reports
+            </li>
+
+            <li>
+                <i class="fa-solid fa-users"></i>
+                Workers
+            </li>
+
+            <li>
+                <i class="fa-solid fa-helmet-safety"></i>
+                PPE Compliance
+            </li>
+
+            <li>
+                <i class="fa-solid fa-chart-line"></i>
+                Analytics
+            </li>
+
+            <li>
+                <i class="fa-solid fa-gear"></i>
+                Settings
+            </li>
+
+        </ul>
+
+    </aside>
+
+
+    <!-- Main Content -->
+
+    <main class="main">
+
+        <div class="topbar">
+
+            <h1>Incident Reports</h1>
+
+            <span>
+                <i class="fa-solid fa-user"></i>
+                Admin
+            </span>
+
+        </div>
+
+
+        <!-- Report Form -->
+
+        <section class="report-box">
+
+            <h2>
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                Report a Safety Incident
+            </h2>
+
+            <p>
+                Submit details about an accident, hazard or safety violation.
+            </p>
+
+            <form id="incidentForm">
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>Incident Title</label>
+
+                        <input type="text"
+                               placeholder="Enter incident title"
+                               required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Site Location</label>
+
+                        <input type="text"
+                               placeholder="Enter site location"
+                               required>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>Incident Type</label>
+
+                        <select required>
+
+                            <option value="">Select incident type</option>
+
+                            <option>Accident</option>
+                            <option>Safety Hazard</option>
+                            <option>PPE Violation</option>
+                            <option>Equipment Failure</option>
+                            <option>Other</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Severity</label>
+
+                        <select required>
+
+                            <option value="">Select severity</option>
+
+                            <option>Low</option>
+                            <option>Medium</option>
+                            <option>High</option>
+                            <option>Critical</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Date & Time</label>
+
+                    <input type="datetime-local" required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Description</label>
+
+                    <textarea rows="5"
+                              placeholder="Describe what happened..."
+                              required></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Reported By</label>
+
+                    <input type="text"
+                           placeholder="Enter your name"
+                           required>
+
+                </div>
+
+
+                <button type="submit">
+
+                    <i class="fa-solid fa-paper-plane"></i>
+                    Submit Incident Report
+
+                </button>
+
+            </form>        
+         
+        </section>
+
+    </main>
+
+</body>
+
+</html>

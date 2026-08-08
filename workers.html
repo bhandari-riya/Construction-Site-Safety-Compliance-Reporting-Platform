@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SafeBuild - Workers</title>
+
+    <link rel="stylesheet" href="workers.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <h2>
+            <i class="fa-solid fa-helmet-safety"></i>
+            SafeBuild
+        </h2>
+
+        <ul>
+
+            <li onclick="location.href='dashboard.html'">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </li>
+
+            <li onclick="location.href='incident.html'">
+                <i class="fa-solid fa-file-circle-exclamation"></i>
+                Incident Reports
+            </li>
+
+            <li class="active">
+                <i class="fa-solid fa-users"></i>
+                Workers
+            </li>
+
+            <li>
+                <i class="fa-solid fa-helmet-safety"></i>
+                PPE Compliance
+            </li>
+
+            <li>
+                <i class="fa-solid fa-chart-line"></i>
+                Analytics
+            </li>
+
+            <li>
+                <i class="fa-solid fa-gear"></i>
+                Settings
+            </li>
+
+        </ul>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main">
+
+        <div class="topbar">
+
+            <h1>Workers</h1>
+
+            <span>
+                <i class="fa-solid fa-user"></i>
+                Admin
+            </span>
+
+        </div>
+
+
+        <!-- Page Heading -->
+        <section class="workers-section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Worker Management</h2>
+                    <p>Manage construction workers and their safety information.</p>
+                </div>
+
+                <button class="add-worker-btn">
+                    <i class="fa-solid fa-user-plus"></i>
+                    Add Worker
+                </button>
+
+            </div>
+
+
+            <!-- Search -->
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input type="text"
+                       placeholder="Search workers...">
+
+            </div>
+
+
+            <!-- Workers Table -->
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Worker</th>
+                            <th>Worker ID</th>
+                            <th>Site</th>
+                            <th>Role</th>
+                            <th>PPE Status</th>
+                            <th>Status</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>
+                                <i class="fa-solid fa-user worker-icon"></i>
+                                Rahul Patil
+                            </td>
+
+                            <td>WRK-001</td>
+
+                            <td>Site A</td>
+
+                            <td>Supervisor</td>
+
+                            <td>
+                                <span class="ppe-safe">Compliant</span>
+                            </td>
+
+                            <td>
+                                <span class="status-active">Active</span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <i class="fa-solid fa-user worker-icon"></i>
+                                Amit Sharma
+                            </td>
+
+                            <td>WRK-002</td>
+
+                            <td>Site B</td>
+
+                            <td>Electrician</td>
+
+                            <td>
+                                <span class="ppe-warning">Warning</span>
+                            </td>
+
+                            <td>
+                                <span class="status-active">Active</span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <i class="fa-solid fa-user worker-icon"></i>
+                                Suresh More
+                            </td>
+
+                            <td>WRK-003</td>
+
+                            <td>Site C</td>
+
+                            <td>Mason</td>
+
+                            <td>
+                                <span class="ppe-safe">Compliant</span>
+                            </td>
+
+                            <td>
+                                <span class="status-active">Active</span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <i class="fa-solid fa-user worker-icon"></i>
+                                Vikram Jadhav
+                            </td>
+
+                            <td>WRK-004</td>
+
+                            <td>Site D</td>
+
+                            <td>Crane Operator</td>
+
+                            <td>
+                                <span class="ppe-danger">Non-Compliant</span>
+                            </td>
+
+                            <td>
+                                <span class="status-inactive">Inactive</span>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

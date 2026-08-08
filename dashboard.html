@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SafeBuild | Dashboard</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f5f7f9;
+    color: #18212b;
+}
+
+/* ===== LAYOUT ===== */
+
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ===== SIDEBAR ===== */
+
+.sidebar {
+    width: 250px;
+    min-height: 100vh;
+    background: #07131d;
+    color: white;
+    padding: 25px 18px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 5px 10px 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.logo-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    background: #f59b18;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 21px;
+}
+
+.logo h2 {
+    font-size: 21px;
+}
+
+.logo small {
+    display: block;
+    color: #8c98a3;
+    font-size: 10px;
+    margin-top: 2px;
+}
+
+.menu-title {
+    color: #687580;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin: 28px 10px 10px;
+}
+
+.nav {
+    list-style: none;
+}
+
+.nav li {
+    margin: 6px 0;
+}
+
+.nav a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: #c7d0d7;
+    padding: 13px 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.nav a i {
+    width: 20px;
+    text-align: center;
+}
+
+.nav a:hover {
+    background: #162530;
+    color: white;
+}
+
+.nav .active a {
+    background: #f59b18;
+    color: white;
+    font-weight: 600;
+}
+
+.sidebar-bottom {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    right: 25px;
+    color: #d5dce1;
+}
+
+.sidebar-bottom i {
+    color: #f59b18;
+    margin-right: 8px;
+}
+
+.sidebar-bottom small {
+    display: block;
+    color: #71808c;
+    margin-top: 3px;
+    font-size: 10px;
+}
+
+/* ===== MAIN ===== */
+
+.main {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    padding: 35px 40px;
+}
+
+/* ===== TOPBAR ===== */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.heading small {
+    color: #a66a29;
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.heading h1 {
+    font-size: 30px;
+    margin-top: 4px;
+}
+
+.heading p {
+    color: #7c858c;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.admin {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.notification {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #f2e3d0;
+    color: #a76120;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.admin-text {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.admin-text small {
+    display: block;
+    color: #8c949a;
+    font-size: 9px;
+}
+
+/* ===== QUICK ACTIONS ===== */
+
+.quick-actions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.action {
+    background: white;
+    border-radius: 14px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: #17212a;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.035);
+    transition: 0.2s;
+}
+
+.action:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(0,0,0,0.07);
+}
+
+.action-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff3e3;
+    color: #e98d12;
+}
+
+.action:nth-child(2) .action-icon {
+    background: #eaf5ff;
+    color: #1976b9;
+}
+
+.action:nth-child(3) .action-icon {
+    background: #edf7ef;
+    color: #277342;
+}
+
+.action-content {
+    flex: 1;
+}
+
+.action-content strong {
+    display: block;
+    font-size: 13px;
+}
+
+.action-content span {
+    color: #8a9298;
+    font-size: 10px;
+}
+
+.action > i {
+    color: #77828a;
+}
+
+/* ===== STAT CARDS ===== */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.035);
+}
+
+.stat-top {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.stat-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff1df;
+    color: #c87413;
+}
+
+.stat-card:nth-child(2) .stat-icon {
+    background: #eaf7ed;
+    color: #20713a;
+}
+
+.stat-card:nth-child(3) .stat-icon {
+    background: #eaf3ff;
+    color: #2469a8;
+}
+
+.stat-card:nth-child(4) .stat-icon {
+    background: #ffeded;
+    color: #b53b3b;
+}
+
+.stat-label {
+    color: #7d858b;
+    font-size: 10px;
+}
+
+.stat-number {
+    font-size: 27px;
+    font-weight: 700;
+    margin-top: 2px;
+}
+
+.stat-change {
+    margin-top: 10px;
+    font-size: 9px;
+    color: #5d7866;
+}
+
+/* ===== CONTENT GRID ===== */
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 18px;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 23px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.035);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.card-header small {
+    color: #a66a29;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.card-header h2 {
+    font-size: 18px;
+    margin-top: 4px;
+}
+
+.view-all {
+    font-size: 10px;
+    color: #a66a29;
+    text-decoration: none;
+}
+
+/* ===== INCIDENTS ===== */
+
+.incident {
+    display: flex;
+    align-items: center;
+    padding: 13px 0;
+    border-bottom: 1px solid #eef0f1;
+}
+
+.incident:last-child {
+    border-bottom: none;
+}
+
+.incident-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 13px;
+    background: #fff0ee;
+    color: #b93d31;
+}
+
+.incident:nth-child(3) .incident-icon {
+    background: #fff4e4;
+    color: #c27720;
+}
+
+.incident:nth-child(4) .incident-icon {
+    background: #edf7ef;
+    color: #327348;
+}
+
+.incident:nth-child(5) .incident-icon {
+    background: #fff4e4;
+    color: #bd721c;
+}
+
+.incident-info {
+    flex: 1;
+}
+
+.incident-info strong {
+    display: block;
+    font-size: 12px;
+}
+
+.incident-info span {
+    font-size: 9px;
+    color: #8a9298;
+}
+
+.badge {
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 8px;
+    font-weight: 600;
+    background: #fff0ed;
+    color: #a73d31;
+}
+
+.badge.medium {
+    background: #fff2df;
+    color: #a56b25;
+}
+
+.badge.resolved {
+    background: #eaf6ed;
+    color: #317044;
+}
+
+/* ===== SAFETY SCORE ===== */
+
+.score {
+    text-align: center;
+}
+
+.circle {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    border: 7px solid #d9a26a;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.circle strong {
+    font-size: 28px;
+}
+
+.circle span {
+    font-size: 9px;
+    color: #6e777d;
+}
+
+.progress {
+    text-align: left;
+    margin-top: 15px;
+}
+
+.progress-row {
+    margin-bottom: 13px;
+}
+
+.progress-row div {
+    display: flex;
+    justify-content: space-between;
+    font-size: 9px;
+    margin-bottom: 5px;
+}
+
+.bar {
+    height: 5px;
+    background: #edf0f1;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.bar span {
+    display: block;
+    height: 100%;
+    background: #a85f23;
+    border-radius: 5px;
+}
+
+/* ===== BOTTOM ===== */
+
+.bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 18px;
+}
+
+.overview-number {
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.overview-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    font-size: 10px;
+    color: #68737a;
+}
+
+.green {
+    color: #287044;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 1000px) {
+
+    .sidebar {
+        width: 210px;
+    }
+
+    .main {
+        margin-left: 210px;
+        width: calc(100% - 210px);
+        padding: 25px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .quick-actions {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        min-height: auto;
+    }
+
+    .sidebar-bottom {
+        display: none;
+    }
+
+    .dashboard {
+        display: block;
+    }
+
+    .main {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .content-grid,
+    .bottom-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-helmet-safety"></i>
+            </div>
+
+            <div>
+                <h2>SafeBuild</h2>
+                <small>Safety Platform</small>
+            </div>
+        </div>
+
+        <div class="menu-title">MENU</div>
+
+        <ul class="nav">
+
+            <li class="active">
+                <a href="dashboard.html">
+                    <i class="fa-solid fa-house"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="incident.html">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    Incident Reports
+                </a>
+            </li>
+
+            <li>
+                <a href="workers.html">
+                    <i class="fa-solid fa-users"></i>
+                    Workers
+                </a>
+            </li>
+
+            <li>
+                <a href="ppe.html">
+                    <i class="fa-solid fa-helmet-safety"></i>
+                    PPE Compliance
+                </a>
+            </li>
+
+            <li>
+                <a href="analytics.html">
+                    <i class="fa-solid fa-chart-line"></i>
+                    Analytics
+                </a>
+            </li>
+
+        </ul>
+
+        <div class="menu-title">SYSTEM</div>
+
+        <ul class="nav">
+
+            <li>
+                <a href="settings.html">
+                    <i class="fa-solid fa-gear"></i>
+                    Settings
+                </a>
+            </li>
+
+        </ul>
+
+        <div class="sidebar-bottom">
+            <i class="fa-solid fa-shield-halved"></i>
+            <strong>Safety First</strong>
+            <small>Protect every worker</small>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- TOPBAR -->
+        <div class="topbar">
+
+            <div class="heading">
+                <small>SAFEBUILD DASHBOARD</small>
+
+                <h1>
+                    Good Morning, Admin 👋
+                </h1>
+
+                <p>
+                    Here's what's happening across your construction sites today.
+                </p>
+            </div>
+
+            <div class="admin">
+
+                <div class="notification">
+                    <i class="fa-regular fa-bell"></i>
+                </div>
+
+                <div class="avatar">
+                    A
+                </div>
+
+                <div class="admin-text">
+                    Admin
+                    <small>Safety Manager</small>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- QUICK ACTIONS -->
+        <div class="quick-actions">
+
+            <a href="incident.html" class="action">
+
+                <div class="action-icon">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+
+                <div class="action-content">
+                    <strong>Report Incident</strong>
+                    <span>Submit a new safety report</span>
+                </div>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+
+            <a href="workers.html" class="action">
+
+                <div class="action-icon">
+                    <i class="fa-solid fa-user-plus"></i>
+                </div>
+
+                <div class="action-content">
+                    <strong>Manage Workers</strong>
+                    <span>View and manage workers</span>
+                </div>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+
+            <a href="ppe.html" class="action">
+
+                <div class="action-icon">
+                    <i class="fa-solid fa-helmet-safety"></i>
+                </div>
+
+                <div class="action-content">
+                    <strong>PPE Inspection</strong>
+                    <span>Check safety compliance</span>
+                </div>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+
+        <!-- STATISTICS -->
+        <div class="stats">
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    <div>
+                        <div class="stat-label">Total Workers</div>
+                        <div class="stat-number">520</div>
+                    </div>
+
+                </div>
+
+                <div class="stat-change">
+                    ↑ 8.2% this month
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+
+                    <div>
+                        <div class="stat-label">Safety Compliance</div>
+                        <div class="stat-number">98%</div>
+                    </div>
+
+                </div>
+
+                <div class="stat-change">
+                    ↑ 2.4% improved
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+
+                    <div>
+                        <div class="stat-label">Active Projects</div>
+                        <div class="stat-number">24</div>
+                    </div>
+
+                </div>
+
+                <div class="stat-change">
+                    3 new this month
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+
+                    <div>
+                        <div class="stat-label">Open Incidents</div>
+                        <div class="stat-number">15</div>
+                    </div>
+
+                </div>
+
+                <div class="stat-change">
+                    Needs attention
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MAIN CONTENT -->
+        <div class="content-grid">
+
+            <!-- INCIDENT CARD -->
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+                        <small>SAFETY MONITORING</small>
+                        <h2>Recent Incidents</h2>
+                    </div>
+
+                    <a href="incident.html" class="view-all">
+                        View all →
+                    </a>
+
+                </div>
+
+
+                <div class="incident">
+
+                    <div class="incident-icon">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+
+                    <div class="incident-info">
+                        <strong>PPE Violation</strong>
+                        <span>Site B • 03 Aug 2026</span>
+                    </div>
+
+                    <span class="badge">
+                        High
+                    </span>
+
+                </div>
+
+
+                <div class="incident">
+
+                    <div class="incident-icon">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+
+                    <div class="incident-info">
+                        <strong>Equipment Hazard</strong>
+                        <span>Site C • 02 Aug 2026</span>
+                    </div>
+
+                    <span class="badge medium">
+                        Medium
+                    </span>
+
+                </div>
+
+
+                <div class="incident">
+
+                    <div class="incident-icon">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+
+                    <div class="incident-info">
+                        <strong>Safety Inspection</strong>
+                        <span>Site A • 01 Aug 2026</span>
+                    </div>
+
+                    <span class="badge resolved">
+                        Resolved
+                    </span>
+
+                </div>
+
+
+                <div class="incident">
+
+                    <div class="incident-icon">
+                        <i class="fa-solid fa-person"></i>
+                    </div>
+
+                    <div class="incident-info">
+                        <strong>Worker Safety Issue</strong>
+                        <span>Site A • 31 Jul 2026</span>
+                    </div>
+
+                    <span class="badge medium">
+                        Medium
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- SAFETY SCORE -->
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+                        <small>TODAY</small>
+                        <h2>Safety Score</h2>
+                    </div>
+
+                </div>
+
+
+                <div class="score">
+
+                    <div class="circle">
+                        <strong>98</strong>
+                        <span>Excellent</span>
+                    </div>
+
+                </div>
+
+
+                <div class="progress">
+
+                    <div class="progress-row">
+
+                        <div>
+                            <span>PPE Compliance</span>
+                            <span>98%</span>
+                        </div>
+
+                        <div class="bar">
+                            <span style="width:98%"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="progress-row">
+
+                        <div>
+                            <span>Training</span>
+                            <span>94%</span>
+                        </div>
+
+                        <div class="bar">
+                            <span style="width:94%"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="progress-row">
+
+                        <div>
+                            <span>Inspections</span>
+                            <span>96%</span>
+                        </div>
+
+                        <div class="bar">
+                            <span style="width:96%"></span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOTTOM CARDS -->
+        <div class="bottom-grid">
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+                        <small>WORKFORCE</small>
+                        <h2>Worker Overview</h2>
+                    </div>
+
+                    <a href="workers.html" class="view-all">
+                        View workers →
+                    </a>
+
+                </div>
+
+                <div class="overview-number">
+                    520
+                </div>
+
+                <div class="overview-row">
+                    <span>Active Workers</span>
+                    <strong class="green">486</strong>
+                </div>
+
+                <div class="overview-row">
+                    <span>On Leave</span>
+                    <strong>34</strong>
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+                        <small>PPE</small>
+                        <h2>PPE Status</h2>
+                    </div>
+
+                    <a href="ppe.html" class="view-all">
+                        Check →
+                    </a>
+
+                </div>
+
+                <div class="overview-number">
+                    96%
+                </div>
+
+                <div class="overview-row">
+                    <span>Compliant</span>
+                    <strong class="green">500</strong>
+                </div>
+
+                <div class="overview-row">
+                    <span>Needs Inspection</span>
+                    <strong>20</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>

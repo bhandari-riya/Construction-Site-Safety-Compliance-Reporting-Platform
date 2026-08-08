@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SafeBuild - PPE Compliance</title>
+
+    <link rel="stylesheet" href="ppe.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <h2>
+            <i class="fa-solid fa-helmet-safety"></i>
+            SafeBuild
+        </h2>
+
+        <ul>
+
+            <li onclick="location.href='dashboard.html'">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </li>
+
+            <li onclick="location.href='incident.html'">
+                <i class="fa-solid fa-file-circle-exclamation"></i>
+                Incident Reports
+            </li>
+
+            <li onclick="location.href='workers.html'">
+                <i class="fa-solid fa-users"></i>
+                Workers
+            </li>
+
+            <li class="active">
+                <i class="fa-solid fa-helmet-safety"></i>
+                PPE Compliance
+            </li>
+
+            <li>
+                <i class="fa-solid fa-chart-line"></i>
+                Analytics
+            </li>
+
+            <li>
+                <i class="fa-solid fa-gear"></i>
+                Settings
+            </li>
+
+        </ul>
+
+    </aside>
+
+
+    <!-- Main Content -->
+
+    <main class="main">
+
+        <div class="topbar">
+
+            <h1>PPE Compliance</h1>
+
+            <span>
+                <i class="fa-solid fa-user"></i>
+                Admin
+            </span>
+
+        </div>
+
+
+        <!-- Overview Cards -->
+
+        <div class="ppe-cards">
+
+            <div class="ppe-card">
+
+                <div class="ppe-icon green">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+
+                <div>
+                    <h2>92%</h2>
+                    <p>Overall Compliance</p>
+                </div>
+
+            </div>
+
+
+            <div class="ppe-card">
+
+                <div class="ppe-icon orange">
+                    <i class="fa-solid fa-person"></i>
+                </div>
+
+                <div>
+                    <h2>478</h2>
+                    <p>Compliant Workers</p>
+                </div>
+
+            </div>
+
+
+            <div class="ppe-card">
+
+                <div class="ppe-icon red">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+
+                <div>
+                    <h2>42</h2>
+                    <p>Violations</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PPE Checklist -->
+
+        <section class="ppe-section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>PPE Safety Checklist</h2>
+
+                    <p>
+                        Monitor required personal protective equipment
+                        across construction sites.
+                    </p>
+                </div>
+
+                <button class="inspection-btn">
+                    <i class="fa-solid fa-clipboard-check"></i>
+                    New Inspection
+                </button>
+
+            </div>
+
+
+            <!-- PPE Table -->
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Worker</th>
+
+                            <th>Site</th>
+
+                            <th>Helmet</th>
+
+                            <th>Safety Vest</th>
+
+                            <th>Safety Shoes</th>
+
+                            <th>Overall Status</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>
+                                <i class="fa-solid fa-user"></i>
+                                Rahul Patil
+                            </td>
+
+                            <td>Site A</td>
+
+                            <td>
+                                <span class="check">
+                                    <i class="fa-solid fa-check"></i>
+                                </span>
+                            </td>
+
+                            <td>
+                                <span class="check">
+                                    <i class="fa-solid fa-check"></i>
+                                </span>
+                            </td>
+
+                            <td>
+                                <span class="check">
+                                    <i class="fa-solid fa-check"></i>
+                                </span>
+                            </td>
+
+                            <td>
+                                <span class="compliant">
+                                    Compliant
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <i class="fa-solid fa-user"></i>
+                                Amit Sharma
+                            </td>
+
+                            <td>Site B</td>
+
+                            <td>
+                                <span class="check">
+                                    <i class="fa-solid fa-check"></i>
+                                </span>
+                            </td>
+
+                            <td>
+                                <span class="warning">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </span>
+                            </td>
+
+                            <td>
+                                <span class="check">
+                                    <i class="fa-solid fa-check"></i>
+                                </span>
+                            </td>
+
+                            <td>
+                                <span class="warning-status">
+                                    Warning
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <i class="fa-solid fa-user"></i>
+                                Suresh More
+                            </td>
+
+                            <td>Site C</td>
+
+                            <td>
+                                <span class="check">
+                                    <i class="fa-solid fa-check"></i>
+                                </span>
+                            </td>
+
+                            <td>
+                                <span class="check">
+                                    <i class="fa-solid fa-check"></i>
+                                </span>
+                            </td>
+
+                            <td>
+                                <span class="check">
+                                    <i class="fa-solid fa-check"></i>
+                                </span>
+                            </td>
+
+                            <td>
+                                <span class="compliant">
+                                    Compliant
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <i class="fa-solid fa-user"></i>
+                                Vikram Jadhav
+                            </td>
+
+                            <td>Site D</td>
+
+                            <td>
+                                <span class="warning">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </span>
+                            </td>
+
+                            <td>
+                                <span class="check">
+                                    <i class="fa-solid fa-check"></i>
+                                </span>
+                            </td>
+
+                            <td>
+                                <span class="warning">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </span>
+                            </td>
+
+                            <td>
+                                <span class="danger-status">
+                                    Non-Compliant
+                                </span>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

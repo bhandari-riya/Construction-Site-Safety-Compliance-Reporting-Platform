@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SafeBuild - Settings</title>
+
+    <link rel="stylesheet" href="settings.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <h2>
+            <i class="fa-solid fa-helmet-safety"></i>
+            SafeBuild
+        </h2>
+
+        <ul>
+
+            <li onclick="location.href='dashboard.html'">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </li>
+
+            <li onclick="location.href='incident.html'">
+                <i class="fa-solid fa-file-circle-exclamation"></i>
+                Incident Reports
+            </li>
+
+            <li onclick="location.href='workers.html'">
+                <i class="fa-solid fa-users"></i>
+                Workers
+            </li>
+
+            <li onclick="location.href='ppe.html'">
+                <i class="fa-solid fa-helmet-safety"></i>
+                PPE Compliance
+            </li>
+
+            <li onclick="location.href='analytics.html'">
+                <i class="fa-solid fa-chart-line"></i>
+                Analytics
+            </li>
+
+            <li class="active">
+                <i class="fa-solid fa-gear"></i>
+                Settings
+            </li>
+
+        </ul>
+
+    </aside>
+
+
+    <!-- Main Content -->
+
+    <main class="main">
+
+        <div class="topbar">
+
+            <h1>Settings</h1>
+
+            <span>
+                <i class="fa-solid fa-user"></i>
+                Admin
+            </span>
+
+        </div>
+
+
+        <!-- Profile Settings -->
+
+        <section class="settings-box">
+
+            <h2>
+                <i class="fa-solid fa-user"></i>
+                Profile Settings
+            </h2>
+
+            <p>Manage your administrator account information.</p>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>Full Name</label>
+
+                    <input type="text"
+                        value="Admin"
+                        placeholder="Enter your name">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Email Address</label>
+
+                    <input type="email"
+                        value="admin@safebuild.com"
+                        placeholder="Enter your email">
+
+                </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>Phone Number</label>
+
+                    <input type="tel"
+                        placeholder="Enter phone number">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Role</label>
+
+                    <input type="text"
+                        value="Safety Administrator"
+                        readonly>
+
+                </div>
+
+            </div>
+
+
+            <button class="save-btn">
+                <i class="fa-solid fa-floppy-disk"></i>
+                Save Changes
+            </button>
+
+        </section>
+
+
+        <!-- Notification Settings -->
+
+        <section class="settings-box">
+
+            <h2>
+                <i class="fa-solid fa-bell"></i>
+                Notification Settings
+            </h2>
+
+            <p>Choose which safety notifications you want to receive.</p>
+
+
+            <div class="setting-item">
+
+                <div>
+                    <strong>Incident Alerts</strong>
+                    <p>Receive notifications about new safety incidents.</p>
+                </div>
+
+                <input type="checkbox" checked>
+
+            </div>
+
+
+            <div class="setting-item">
+
+                <div>
+                    <strong>PPE Violations</strong>
+                    <p>Receive alerts when PPE compliance issues are detected.</p>
+                </div>
+
+                <input type="checkbox" checked>
+
+            </div>
+
+
+            <div class="setting-item">
+
+                <div>
+                    <strong>Safety Inspections</strong>
+                    <p>Receive reminders for scheduled inspections.</p>
+                </div>
+
+                <input type="checkbox" checked>
+
+            </div>
+
+        </section>
+
+
+        <!-- Security -->
+
+        <section class="settings-box">
+
+            <h2>
+                <i class="fa-solid fa-shield-halved"></i>
+                Security
+            </h2>
+
+            <p>Manage your account security.</p>
+
+
+            <button class="password-btn">
+                <i class="fa-solid fa-key"></i>
+                Change Password
+            </button>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
